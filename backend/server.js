@@ -5,6 +5,14 @@ const app = express();
 
 const port = 3001;
 
+app.use(
+  cors({
+    origin: ["https://merndeploy-peach.vercel.app"],
+    methods: ["POST", "GET"],
+    credentials: true,
+  })
+);
+
 app.get("/", (req, res) => {
   res.send("Project is running");
 });
